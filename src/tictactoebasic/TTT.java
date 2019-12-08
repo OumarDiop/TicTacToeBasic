@@ -34,10 +34,11 @@ public class TTT {
     }
     
     public boolean checkForWin() {
-        checkRowsForWin();
-        checkColumnsForWin();
+        return(
+        checkRowsForWin(); ||
+        checkColumnsForWin(); ||
         checkDiagonalsForWin();
-    
+    )
     }
     */
     private boolean checkRowsForWin() {
@@ -63,7 +64,16 @@ public class TTT {
     }
     
     private boolean checkRowCol(char c1, char c2, char c3) {
-        return false;
+        return (c1 != '-' && c1 == c2 && c2 == c3);
+    }
+    
+    private void changePlayer() {
+        if (currentPlayerMark == 'x') {
+            currentPlayerMark = 'o';
+        }
+        else {
+            currentPlayerMark = 'x';
+        }
     }
     
     
